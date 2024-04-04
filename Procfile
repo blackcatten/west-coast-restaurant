@@ -1,1 +1,1 @@
-web: gunicorn west-coast-restaurant.wsgi
+web: gunicorn west-coast.wsgi

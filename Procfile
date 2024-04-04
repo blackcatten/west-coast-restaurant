@@ -1,0 +1,1 @@
+web: gunicorn west-coast-restaurant.wsgi

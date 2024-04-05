@@ -1,1 +1,1 @@
-web: gunicorn west-coast.wsgi
+web: gunicorn west_coast.wsgi

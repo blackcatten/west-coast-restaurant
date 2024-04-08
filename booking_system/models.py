@@ -1,7 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
 from datetime import datetime
-from cloudinary.models import CloudinaryField
 
 
 STATUS = ((0, "Draft"), (1, "Published"))
@@ -35,7 +34,6 @@ class Reservations(models.Model):
     date = models.DateField(null=False, blank=False)
     time = models.CharField(null=True, blank=False,
                             choices=TIME_CHOICES, max_length=60)
-    image = CloudinaryField('image', default='placeholder')
 
     def __str__(self):
         return str(self.date)

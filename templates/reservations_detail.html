@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+
+
+
+
+{% if reservations %}
+            {% for booking in reservations %}
+
+            <p>{{ booking.date }} at {{ booking.time }}</p>
+            <p>{{ booking.fullname}}</p>
+
+
+
+
+
+{%endblock%}

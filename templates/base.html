@@ -27,16 +27,11 @@
 
     <ul class="nav nav-pills nav-justified">
         <li class="nav-item">
-            <a class="nav-link" aria-current="page" href="{% url 'home' %}">Home</a>
+            <a class="nav-link" aria-current="page" href="{% url 'home' %}">West Coast Restaurant</a>
         </li>
-        <li class="nav-item">
-            <a class="nav-link" href="#">Much longer nav link</a>
-          </li>
+
           <li class="nav-item">
-            <a class="nav-link" href="#">Link</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+            <a class="nav-link disabled" aria-disabled="true">{{ user }} </a>
           </li>
                     {% if user.is_authenticated %}
                     <li class="nav-item">

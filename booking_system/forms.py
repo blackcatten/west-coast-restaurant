@@ -9,3 +9,7 @@ class ReservationsForm(forms.ModelForm):
             'full_name', 'guest_list',
             'date', 'time',
             )
+        exclude = ["user"]
+        widgets = {
+            'date': forms.widgets.DateInput(attrs={'type': 'date'})
+        }

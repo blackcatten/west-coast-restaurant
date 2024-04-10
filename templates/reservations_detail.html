@@ -2,18 +2,18 @@
 
 {% block content %}
 
+<div class="container">
+    <h1>Reservation Details</h1>
+    <p>Thank you for your reservation!</p>
+    
+ 
+    <p><strong>Name:</strong> {{ reservation.name }}</p>
+    <p><strong>Email:</strong> {{ reservation.email }}</p>
+    <p><strong>Phone:</strong> {{ reservation.phone }}</p>
+    <p><strong>Date and Time:</strong> {{ reservation.reservation_datetime }}</p>
 
 
+    <p><a href="{% url 'reservation_list' %}">Back to Reservation List</a></p>
+</div>
 
-
-{% if reservations %}
-            {% for booking in reservations %}
-
-            <p>{{ booking.date }} at {{ booking.time }}</p>
-            <p>{{ booking.fullname}}</p>
-
-
-
-
-
-{%endblock%}
+{% endblock %}

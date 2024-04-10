@@ -16,28 +16,32 @@
                 <div class="card-body p-4 p-lg-5 text-black">
   
                     <form method="post" action="{% url 'reservations_detail' %}">
-  
-                    <div class="d-flex align-items-center mb-3 pb-1">
-                      
-                      <span class="h1 fw-bold mb-0">West Coast Restaurant</span>
-                    </div>
-  
-                    <h5 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;">Book your table here</h5>
-  
-                    <div class="form-outline mb-4">
-                      <input type="email" id="form2Example17" class="form-control form-control-lg" />
-                      <label class="form-label" for="form2Example17">Email address</label>
-                    </div>
-  
-                    <div class="form-outline mb-4">
-                      <input type="password" id="form2Example27" class="form-control form-control-lg" />
-                      <label class="form-label" for="form2Example27">Password</label>
-                    </div>
-  
-                    <div class="pt-1 mb-4">
-                      <button class="btn btn-dark btn-lg btn-block" type="button">Login</button>
-                    </div>
-                  </form>
+                        {% csrf_token %}
+                                    <div class="d-flex align-items-center mb-3 pb-1">
+                                        <span class="h1 fw-bold mb-0">West Coast Restaurant</span>
+                                    </div>
+                                    <h5 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;">Book your table here</h5>
+                                    <div class="form-outline mb-4">
+                                        <input type="text" name="name" id="id_name" class="form-control form-control-lg" required>
+                                        <label class="form-label" for="id_name">Name</label>
+                                    </div>
+                                    <div class="form-outline mb-4">
+                                        <input type="email" name="email" id="id_email" class="form-control form-control-lg" required>
+                                        <label class="form-label" for="id_email">Email address</label>
+                                    </div>
+                                    <div class="form-outline mb-4">
+                                        <input type="tel" name="phone" id="id_phone" class="form-control form-control-lg" required>
+                                        <label class="form-label" for="id_phone">Phone number</label>
+                                    </div>
+                                    <div class="form-outline mb-4">
+                                        <input type="datetime-local" name="reservation_datetime" id="id_reservation_datetime" class="form-control form-control-lg" required>
+                                        <label class="form-label" for="id_reservation_datetime">Reservation Date and Time</label>
+                                    </div>
+                                    <div class="pt-1 mb-4">
+                                        <button class="btn btn-dark btn-lg btn-block" type="submit">Book Now</button>
+                                    </div>
+                    
+                    </form>
   
                 </div>
               </div>

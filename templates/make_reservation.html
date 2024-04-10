@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block content %}
+{% load crispy_forms_tags %}
+<div class="container">
+    
+    <h2>Make a New Reservation</h2>
+    <form method="post" action="{% url 'make_reservation' %}">
+        
+        {{ reservations_form | crispy }}
+        {% csrf_token %}
+        <button type="submit">Submit Reservation</button>
+    </form>
+
+    <p><a href="{% url 'home' %}">Back to Reservation List</a></p>
+</div>
+
+{% endblock %}

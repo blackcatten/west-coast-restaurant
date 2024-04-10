@@ -11,7 +11,7 @@ class ReservationsList(generic.ListView):
 
 class ReservationsDetail(View):
 
-    template_name = 'reservations_detail.html'
+    template_name = 'make_reservation.html'
 
     def get(self, request):
         if request.user.is_authenticated:
@@ -25,7 +25,7 @@ class ReservationsDetail(View):
                 }
             return render(
             request,
-            "reservations_detail.html", context
+            "make_reservation.html", context
             )
         else:
             messages.error(
@@ -45,7 +45,7 @@ class ReservationsDetail(View):
             reservations = reservations_form.save(commit=False)
             reservations.user = request.user
             reservations.save()
-            return redirect('reservations_detail')
+            return redirect('make_reservation')
         else:
             return render(request, "reservations_list", {"reservations_form": reservations_form})
 

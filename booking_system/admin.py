@@ -7,8 +7,8 @@ class Guest_listAdmin(admin.ModelAdmin):
 
 class ReservationsAdmin(admin.ModelAdmin):
     list_display = ('full_name',
-                    'guest_list', 'date')
-    list_filter = ('date',)
+                    'guest_list', 'date', 'approved')
+    list_filter = ('approved', 'date',)
     search_fields = ('full_name',)
     date_hierarchy = 'reservation_date'
 

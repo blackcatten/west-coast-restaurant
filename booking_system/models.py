@@ -34,6 +34,7 @@ class Reservations(models.Model):
     date = models.DateField(null=False, blank=False)
     time = models.CharField(null=True, blank=False,
                             choices=TIME_CHOICES, max_length=60)
+    approved = models.BooleanField(default=False)
 
     def __str__(self):
         return str(self.date)

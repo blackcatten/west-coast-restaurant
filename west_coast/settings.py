@@ -33,7 +33,6 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['west-coast-restaurant-901306ae347b.herokuapp.com', 'localhost','8000-blackcatten-westcoastre-ogi93qrz2vt.ws-eu110.gitpod.io']
 
-
 # Application definition
 
 INSTALLED_APPS = [

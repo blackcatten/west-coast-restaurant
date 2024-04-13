@@ -2,6 +2,9 @@ from django.shortcuts import render, redirect, get_object_or_404
 from django.views import generic, View
 from .models import Guest_list, Reservations
 from .forms import ReservationsForm
+from django.http import HttpResponseRedirect
+from django.http import HttpResponse
+from django.contrib import messages
 
 
 class ReservationsList(generic.ListView):
@@ -9,7 +12,7 @@ class ReservationsList(generic.ListView):
     template_name = "index.html"
 
 
-class ReservationsDetail(View):
+class MakeReservations(View):
 
     template_name = 'make_reservation.html'
 
@@ -45,25 +48,14 @@ class ReservationsDetail(View):
             reservations = reservations_form.save(commit=False)
             reservations.user = request.user
             reservations.save()
-            return redirect('make_reservation')
+            return redirect('reservation_detail')
         else:
-            return render(request, "reservations_list", {"reservations_form": reservations_form})
+            return render(request, "make_reservations", {"reservations_form": reservations_form})
 
-      
-class CreateReservations(View):
-    template_name = 'create_reservations.html'
 
-    def get(self, request):
-        reservations_form = ReservationsForm()
-        return render(request, self.template_name, {'reservations_form': reservations_form})
+class ReservationsDetail(View):
+    template_name = 'reservations_detail.html'
 
-    def post(self, request):
-        reservations_form = ReservationsForm(data=request.POST)
-        if reservations_form.is_valid():
-            reservations = reservations_form.save(commit=False)
-            reservations.user = request.user
-            reservations.save()
-            return redirect('reservations_list')
-        else:
-            return render(request, self.template_name, {"reservations_form": reservations_form})
-
+    def get(self, request, pk):
+        reservation = Reservations.objects.get(pk=pk)
+        return render(request, self.template_name, {'reservation': reservation})    

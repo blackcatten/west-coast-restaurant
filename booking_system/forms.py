@@ -7,7 +7,7 @@ class ReservationsForm(forms.ModelForm):
     class Meta:
         model = Reservations
         fields = (
-            'full_name', 'guest_list',
+            'full_name', 'email', 'guest_list',
             'date', 'time',
             )
         exclude = ["user"]

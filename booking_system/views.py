@@ -47,10 +47,10 @@ class MakeReservations(View):
 
         available_slots = []
 
-        for time_choice, _ in OnlineBooking.TIME_CHOICES:
+        for time_choice, _ in Reservations.TIME_CHOICES:
             time = time_choice
             booked_tables = (
-                OnlineBooking.objects
+                Reservations.objects
                 .filter(date=date, time=time)
                 .count()
             )
@@ -93,7 +93,7 @@ class MakeReservations(View):
                         request,
                         'You cannot book a table for a past date.'
                     )
-                    return redirect('online_booking')
+                    return redirect('make_reservation')
 
                 booked_tables_on_reservation_date = (
                     Reservations.objects

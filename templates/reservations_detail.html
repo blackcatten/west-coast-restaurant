@@ -2,9 +2,33 @@
 
 {% block content %}
 
-{% if bookings %}
-{% for booking in bookings %}
+{% if reservations %}
+{% for booking in reservations %}
 
 <p>  {{ booking.full_name }} </p>
+<p>  {{ booking.email }} </p>
+<p>  {{ booking.guest_list }} </p>
+<p>  {{ booking.date }} </p>
+<p>  {{ booking.time }} </p>
+{% if booking.approved %}
+<p>
+ 
+  Status: Approved
+</p>
+{% else %}
+<p>
+  Status: Pending 
+</p>
+{% endif %}
+<button>Edit</button>
 
+<button>delete</button>>
+
+{% endfor %}
+{% else %}
+
+<h2>No bookings</h2>
+<p>Want to book a table?</p>
+
+{% endif %}
 {% endblock %}

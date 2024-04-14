@@ -7,18 +7,30 @@
 
 {% block content %}
 
-<div class="container">
-  <div class="row">
-    <div class="col-md-8 mt-3 offset-md-2">
-      <h3>{% trans "Sign In" %}</h3>
+<section class="background-radial-gradient overflow-hidden" style="background-image: url(https://images.pexels.com/photos/355808/pexels-photo-355808.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1);
+background-repeat: no-repeat; background-size: cover;">
 
-      <p>{% blocktrans %}Welcome back to the code|star blog. To leave a comment or like a post, please log in. If you
-        have not created an account yet, then <a class="link" href="{{ signup_url }}">sign up</a>
-        first.{% endblocktrans %}</p>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-md-8 mt-3 offset-md-2">
+
+      <div class="container px-4 py-5 px-md-5 text-center text-lg-start my-5">
+        <div class="row gx-lg-5 align-items-center mb-5">
+          <div class="col-lg-6 mb-5 mb-lg-0" style="z-index: 10">
+            <h1 class="my-5 display-5 fw-bold ls-tight" style="color: hsl(218, 81%, 95%)">
+              WestCoast <br />
+              <span style="color: hsl(218, 81%, 75%)">Restaurant</span>
+            </h1>
+            <h3>{% trans "Sign In" %}</h3>
+
+            <p class="text-white">{% blocktrans %}Welcome to the West Coast Restaurant. To make a reservation, please log in. If you
+              have not created an account yet, then <a class="link" href="{{ signup_url }}">sign up</a>
+              first.{% endblocktrans %}</p>
+          </div>
+    
+          <div class="col-lg-6 mb-5 mb-lg-0 position-relative">
+            <div id="radius-shape-1" class="position-absolute rounded-circle shadow-5-strong"></div>
+            <div id="radius-shape-2" class="position-absolute shadow-5-strong"></div>
+    
+            <div class="card bg-glass">
+              <div class="card-body px-4 py-5 px-md-5">
       <form class="login" method="POST" action="{% url 'account_login' %}">
         {% csrf_token %}
         {{ form.as_p }}
@@ -30,4 +42,7 @@
     </div>
   </div>
 </div>
+</div>
+</div>
+</section>
 {% endblock %}

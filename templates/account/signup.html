@@ -5,17 +5,31 @@
 {% block head_title %}{% trans "Signup" %}{% endblock %}
 
 {% block content %}
-<div class="container">
-  <div class="row">
-    <div class="col-md-8 mt-3 offset-md-2">
-      <h3>{% trans "Sign Up" %}</h3>
 
-      <p>{% blocktrans %}Welcome back to the code|star blog. Do you already have an account? Then please <a class="link"
+
+      <section class="background-radial-gradient overflow-hidden" style="background-image: url(https://images.pexels.com/photos/355808/pexels-photo-355808.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1);
+background-repeat: no-repeat; background-size: cover;">
+
+
+      <div class="container px-4 py-5 px-md-5 text-center text-lg-start my-5">
+        <div class="row gx-lg-5 align-items-center mb-5">
+          <div class="col-lg-6 mb-5 mb-lg-0" style="z-index: 10">
+            <h1 class="my-5 display-5 fw-bold ls-tight" style="color: hsl(218, 81%, 95%)">
+              WestCoast <br />
+              <span style="color: hsl(218, 81%, 75%)">Restaurant</span>
+            </h1>
+            <h3>{% trans "Sign Up" %}</h3>
+
+      <p class="text-white">{% blocktrans %}Welcome back to the West Coast Restaurant. Do you already have an account? Then please <a class="link"
           href="{{ login_url }}">sign in</a> instead.{% endblocktrans %}</p>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-md-8 mt-3 offset-md-2">
+          </div>
+    
+          <div class="col-lg-6 mb-5 mb-lg-0 position-relative">
+            <div id="radius-shape-1" class="position-absolute rounded-circle shadow-5-strong"></div>
+            <div id="radius-shape-2" class="position-absolute shadow-5-strong"></div>
+    
+            <div class="card bg-glass">
+              <div class="card-body px-4 py-5 px-md-5">
       <form class="signup" id="signup_form" method="post" action="{% url 'account_signup' %}">
         {% csrf_token %}
         {{ form.as_p }}
@@ -27,5 +41,8 @@
     </div>
   </div>
 </div>
+</div>
+</div>
+</section>
 
 {% endblock %}

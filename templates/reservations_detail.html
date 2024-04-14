@@ -5,24 +5,31 @@
 {% if reservations %}
 {% for booking in reservations %}
 
-<p>  {{ booking.full_name }} </p>
-<p>  {{ booking.email }} </p>
-<p>  {{ booking.guest_list }} </p>
-<p>  {{ booking.date }} </p>
-<p>  {{ booking.time }} </p>
-{% if booking.approved %}
-<p>
- 
-  Status: Approved
-</p>
-{% else %}
-<p>
-  Status: Pending 
-</p>
-{% endif %}
-<button>Edit</button>
+  <div class="col">
+<div class="card">
+  <div class="card-header">
+    Reservations detail
+  </div>
+  <div class="card-body">
+    
+    <p><strong>Name:</strong> {{ booking.full_name }} </p>
+    <p><strong>Email:</strong>   {{ booking.email }} </p>
+    <p><strong>Guest list:</strong>   {{ booking.guest_list }} </p>
+    <p><strong>Date:</strong>   {{ booking.date }} </p>
+    <p><strong>Time:</strong>   {{ booking.time }} </p>
+            {% if booking.approved %}
+            <p><strong>Status:</strong>  Approved
+            </p>
+            {% else %}
+            <p><strong>Status:</strong>  Pending 
+            </p>
+          {% endif %}
+<button class="btn btn-success">Edit</button>
 
-<button>delete</button>>
+<button class="btn btn-success">Delete</button>
+    </div>
+  </div>
+</div>
 
 {% endfor %}
 {% else %}

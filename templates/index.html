@@ -1,39 +1,30 @@
 {% extends "base.html" %}
-
-
 {% load static %}
-
-{% block head %}
-{% endblock %}
 
 {% block content %}
 
-<section class="v-100">
- 
-        
-   
-</section>
-<section class="vh-100" style="background-color: #05480b;">
-    <div class="container py-5 h-100">
-      <div class="row d-flex justify-content-center align-items-center h-100">
-        <div class="col col-xl-10">
-          <div class="card" style="border-radius: 1rem;">
-            <div class="row g-0">
-              <div class="col-md-6 col-lg-5 d-none d-md-block">
-                <img src="https://images.pexels.com/photos/6127321/pexels-photo-6127321.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-                  alt="login form" class="img-fluid" style="border-radius: 1rem 0 0 1rem;" />
-              </div>
-              <div class="col-md-6 col-lg-7 d-flex align-items-center">
-                <div class="card-body p-4 p-lg-5 text-black">
-                  
-                </div>
-                
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
 
-{%endblock%}
+<section class="vh-100" style="background-image:url(https://images.pexels.com/photos/566344/pexels-photo-566344.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1); 
+background-repeat: no-repeat; background-size: cover;">
+    <div class="vh-100" style="background-color: rgba(21, 17, 17, 0.6);">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col col-xl-10">
+                
+                    <div class="row g-0">
+                        
+                        <div class="row d-flex justify-content-center align-items-center h-100">
+                            <div class="card-body p-4 p-lg-5 text-white text-center">
+                                <h2 class="fs-2 fw-bold mb-3">Welcome to West Coast Restaurant</h2>
+                                <p class="mb-4 text-uppercase">Always Fresh Seafood</p>
+                                <hr>
+                                <a href="{% url 'make_reservation' %}" class="btn btn-success">Make a Reservation</a>
+                            </div>
+                        </div>
+                    </div>
+                
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

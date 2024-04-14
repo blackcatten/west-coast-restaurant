@@ -1,4 +1,3 @@
-
 {% load static %}
 
 <!DOCTYPE html>
@@ -8,6 +7,7 @@
     <title>West Coast Restaurant</title>
 
     <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
@@ -23,7 +23,8 @@
 </head>
 
 <body class="d-flex flex-column h-100 main-bg">
-    <i class="fa-solid fa-utensils"></i><h1 class="fs-1 text" >WestCoast Restaurant</h1>
+    
+ 
     <!-- Navigation -->
 
     
@@ -31,7 +32,8 @@
             <!-- Container wrapper -->
             <div class="container">
               <!-- Navbar brand -->
-              <a class="navbar-brand me-2" href="{% url 'home' %}">West Coast Restaurant</a>
+              <a class="navbar-brand me-2" href="{% url 'home' %}">Home</a>
+              <h1 class="fs-1 text text-center" > <i class="fa-solid fa-fish"></i> WestCoast Restaurant</h1>
         <div class="d-flex align-items-center">
                     {% if user.is_authenticated %}
                    
@@ -51,7 +53,7 @@
                         </button>
                         
                         <button data-mdb-ripple-init type="button" class="btn btn-link px-3 me-2">
-                            <a class="btn btn-secondary" href="{% url 'account_signup' %}">Sign up for free</a>
+                            <a class="btn btn-success" href="{% url 'account_signup' %}">Sign up for free</a>
                         </button>
                         
                     </div>
@@ -67,9 +69,10 @@
     </main>
 
     <!-- Footer -->
+    <hr>
     <footer class="footer mt-auto py-3 dark-bg">
-        <p class="m-0 text-center text-white">Made by Code Instituters</p>
-        <p class="m-0 text-center text-white">Follow us: <i class="fab fa-facebook-square ms-3"></i>
+        <p class="m-0 text-center text-dark">Made by Code Instituters</p>
+        <p class="m-0 text-center text-dark">Follow us: <i class="fab fa-facebook-square ms-3"></i>
             <i class="fab fa-twitter-square ms-3"></i>
             <i class="fab fa-instagram-square ms-3"></i>
             <i class="fab fa-youtube-square ms-3"></i></p>

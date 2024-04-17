@@ -7,6 +7,7 @@ from django.http import HttpResponseRedirect
 from django.http import HttpResponse
 from datetime import datetime, date
 from django.db.models import Q
+from django.urls import reverse
 
 
 class ReservationsList(generic.ListView):
@@ -32,7 +33,7 @@ class ReservationsDetail(View):
         else:
             messages.error(
                 request,
-                'You need to log in to view your bookings.'
+                'Log in first to view your bookings.'
             )
             return redirect('login')
 
@@ -40,8 +41,8 @@ class ReservationsDetail(View):
 class MakeReservations(View):
 
     template_name = 'make_reservation.html'
-    total_tables = 10
-    max_bookings_per_day = 10
+    total_tables = 5
+    max_bookings_per_day = 5
 
     def get_available_slots(self, date):
 
@@ -91,7 +92,7 @@ class MakeReservations(View):
                 if reservation.date < date.today():
                     messages.error(
                         request,
-                        'You cannot book a table for a past date.'
+                        'Sorry, but you can not book a table for this day.'
                     )
                     return redirect('make_reservation')
 
@@ -105,8 +106,7 @@ class MakeReservations(View):
                         self.max_bookings_per_day):
                     messages.error(
                         request,
-                        'No more tables available for'
-                        ' the selected date and time.'
+                        'Sorry, but it is not more tables avaliable.'
                     )
                     return redirect('make_reservation')
 
@@ -123,17 +123,45 @@ class MakeReservations(View):
                 request.session['online_booking_id'] = reservation.id
                 messages.success(
                     request,
-                    'Reservation request submitted successfully.'
-                    'Your booking is pending approval.'
+                    'Your booking is complete. Please wait for approval'
                 )
                 return redirect('reservations_detail')
             else:
-                messages.error(request, 'Error in filling out the form.')
+                messages.error(request, 'Please, try again and look if something is missing.')
         else:
-            messages.error(request, 'You need to log in to make a booking.')
+            messages.error(request, 'Log in first to view your bookings.')
 
         context = {
             'form': form,
         }
         return render(request, 'make_reservation.html', context)
+
+
+class UpdateReservation(View):
+
+    def get(self, request, pk):
+        reservation = get_object_or_404(Reservations, pk=pk)
+        form = ReservationsForm(instance=reservation)
+        context = {
+            'form': form,
+            'reservation': reservation,
+        }
+        return render(request, 'update_reservation.html', context)
+
+    def post(self, request, pk):
+        reservation = get_object_or_404(Reservations, pk=pk)
+        form = ReservationsForm(request.POST, instance=reservation)
+
+        if form.is_valid():
+            reservation = form.save()
+            messages.success(request, 'Your booking has been updated.')
+            return redirect('reservations_detail')
+        else:
+            messages.error(request, 'Wrong! Please, try again.')
+
+        context = {
+            'form': form,
+            'reservation': reservation,
+        }
+        return render(request, 'update_reservation.html', context)
 

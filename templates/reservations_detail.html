@@ -24,7 +24,8 @@
             <p><strong>Status:</strong>  Pending 
             </p>
           {% endif %}
-<button class="btn btn-success">Edit</button>
+<button class="btn btn-success">
+  <a a href="{% url 'update_reservation' booking.id %}">Edit</a></button>
 
 <button class="btn btn-success">Delete</button>
     </div>

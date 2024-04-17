@@ -165,3 +165,12 @@ class UpdateReservation(View):
         }
         return render(request, 'update_reservation.html', context)
 
+
+class DeleteReservation(View):
+
+    def post(self, request, pk):
+        reservation = get_object_or_404(Reservations, pk=pk)
+        reservation.delete()
+        messages.success(request, 'Your booking has been deleted.')
+        return redirect('reservations_detail')
+

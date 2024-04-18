@@ -37,12 +37,8 @@
                 <a class="nav-link active" href="{% url 'reservations_detail' %}">Reservations detail</a>    
                 {% else %}
                 <a class="nav-link active" href="{% url 'make_reservation' %}">Make a Reservation</a>
-                <button data-mdb-ripple-init type="button" class="btn btn-link px-3 me-2">
-                    <a class="nav-link active cHover" href="{% url 'account_login' %}">Login</a>    
-                </button>        
-                <button data-mdb-ripple-init type="button" class="btn btn-link px-3 me-2">
-                    <a class="btn btn-success" href="{% url 'account_signup' %}">Sign up for free</a>
-                </button>
+                <a class="nav-link active cHover" href="{% url 'account_login' %}">Login</a>    
+                <a class="btn btn-success" href="{% url 'account_signup' %}">Sign up for free</a>
                 {% endif %}
             </div>  
         </div>

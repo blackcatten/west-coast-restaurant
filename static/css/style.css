@@ -25,3 +25,12 @@ p {
 footer{
     background-color: #0b62df;
 }
+#account-background {
+    background-image: url(https://images.pexels.com/photos/355808/pexels-photo-355808.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1);
+    background-repeat: no-repeat; 
+    background-size: cover;
+}
+
+span {
+    color: hsl(218, 81%, 75%);
+}

@@ -2,22 +2,26 @@
 {% block content %}
 {% if reservations %}
 {% for booking in reservations %}
+<!-- Reservations details card header -->
 <div class="col">
   <div class="card">
     <div class="card-header">
     Reservations detail
     </div>
+  <!-- Bookings details -->
   <div class="card-body justify-content-center">
     <p><strong>Name:</strong> {{ booking.full_name }} </p>
     <p><strong>Email:</strong> {{ booking.email }} </p>
     <p><strong>Guest list:</strong> {{ booking.guest_list }} </p>
     <p><strong>Date:</strong> {{ booking.date }} </p>
     <p><strong>Time:</strong> {{ booking.time }} </p>
+    <!-- Status -->
     {% if booking.approved %}
     <p><strong>Status:</strong> Approved </p>
     {% else %}
     <p><strong>Status:</strong> Pending </p>
     {% endif %}
+    <!-- Edit/Delete Reservation -->
     <div class="container">
       <div class="row align-items-center">
         <div class="col-md-2">
@@ -35,6 +39,7 @@
 </div>
 {% endfor %}
 {% else %}
+<!-- No bookings available -->
 <div class="row d-flex justify-content-center align-items-center h-100">
   <div class="card-body p-4 p-lg-5 text-center">
     <h2>No bookings</h2>

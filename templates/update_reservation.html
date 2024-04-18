@@ -1,17 +1,12 @@
 {% extends "base.html" %}
-
 {% block content %}
 {% load crispy_forms_tags %}
 <div class="container">
-    
     <h2>Update a Reservation</h2>
-    <form method="post" action="{% url 'update_reservation' reservation.id %}">
-        
+    <form method="post" action="{% url 'update_reservation' reservation.id %}">    
         {% csrf_token %}
         {{ form | crispy }}
         <button type="submit" class="btn btn-success">Submit Reservation</button>
     </form>
-
 </div>
-
 {% endblock %}

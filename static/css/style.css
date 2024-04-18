@@ -13,3 +13,12 @@ p {
     font-weight: 400;
     font-style: normal;
   }
+
+#homepage {
+    background-image:url(https://images.pexels.com/photos/566344/pexels-photo-566344.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+#mask {
+    background-color: rgba(21, 17, 17, 0.6);
+}

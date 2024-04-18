@@ -36,16 +36,16 @@
       </div>
     </div>
   </div>
-</div>
-{% endfor %}
-{% else %}
-<!-- No bookings available -->
-<div class="row d-flex justify-content-center align-items-center h-100">
-  <div class="card-body p-4 p-lg-5 text-center">
-    <h2>No bookings</h2>
-    <p>Do you want to book a table?</p>
-    <a href="{% url 'make_reservation' %}" class="btn btn-success">Make a Reservation</a>
+  {% endfor %}
+  {% else %}
+  <!-- No bookings available -->
+  <div class="row d-flex justify-content-center align-items-center h-100">
+    <div class="card-body p-4 p-lg-5 text-center">
+      <h2>No bookings</h2>
+      <p>Do you want to book a table?</p>
+      <a href="{% url 'make_reservation' %}" class="btn btn-success">Make a Reservation</a>
+    </div>
   </div>
+  {% endif %}
 </div>
-{% endif %}
 {% endblock %}

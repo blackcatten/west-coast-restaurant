@@ -3,6 +3,7 @@
 {% load crispy_forms_tags %}
 <div class="container">
     <h2>Update a Reservation</h2>
+    <!-- Update reservation form -->
     <form method="post" action="{% url 'update_reservation' reservation.id %}">    
         {% csrf_token %}
         {{ form | crispy }}

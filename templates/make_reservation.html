@@ -1,9 +1,11 @@
 {% extends "base.html" %}
 {% block content %}
 {% load crispy_forms_tags %}
+<!-- Available tables for today -->
 <div class="alert alert-info mt-3" role="alert">
     <p class="text-center">Available tables for today: {{ available_tables }}</p>
 </div>
+<!-- Reservations form -->
 <div class="container">  
     <h2>Make a New Reservation</h2>
     <form method="post" action="{% url 'make_reservation' %}">    

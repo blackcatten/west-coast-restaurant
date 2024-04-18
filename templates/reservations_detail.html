@@ -1,45 +1,43 @@
 {% extends "base.html" %}
-
 {% block content %}
-
 {% if reservations %}
 {% for booking in reservations %}
 
-  <div class="col">
-<div class="card">
-  <div class="card-header">
+<div class="col">
+  <div class="card">
+    <div class="card-header">
     Reservations detail
-  </div>
-  <div class="card-body">
-    
+    </div>
+  <div class="card-body justify-content-center">
     <p><strong>Name:</strong> {{ booking.full_name }} </p>
-    <p><strong>Email:</strong>   {{ booking.email }} </p>
-    <p><strong>Guest list:</strong>   {{ booking.guest_list }} </p>
-    <p><strong>Date:</strong>   {{ booking.date }} </p>
-    <p><strong>Time:</strong>   {{ booking.time }} </p>
-            {% if booking.approved %}
-            <p><strong>Status:</strong>  Approved
-            </p>
-            {% else %}
-            <p><strong>Status:</strong>  Pending 
-            </p>
-          {% endif %}
-
-  <a class="btn btn-success" href="{% url 'update_reservation' booking.id %}">Edit</a>
-
-  <form method="post" action="{% url 'delete_reservation' booking.id %}">
-    {% csrf_token %}
-    <button class="btn btn-success" type="submit">Delete</button>
-</form>
+    <p><strong>Email:</strong> {{ booking.email }} </p>
+    <p><strong>Guest list:</strong> {{ booking.guest_list }} </p>
+    <p><strong>Date:</strong> {{ booking.date }} </p>
+    <p><strong>Time:</strong> {{ booking.time }} </p>
+    {% if booking.approved %}
+    <p><strong>Status:</strong> Approved </p>
+    {% else %}
+    <p><strong>Status:</strong> Pending </p>
+    {% endif %}
+    <div class="container">
+      <div class="row align-items-center">
+          <div class="col-md-2">
+            <div class="d-flex justify-content-between">
+              <a class="btn btn-success" href="{% url 'update_reservation' booking.id %}">Edit</a>
+              <form method="post" action="{% url 'delete_reservation' booking.id %}">
+              {% csrf_token %}
+                <button class="btn btn-success" type="submit">Delete</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>
-
 {% endfor %}
 {% else %}
-
 <h2>No bookings</h2>
 <p>Want to book a table?</p>
-
 {% endif %}
 {% endblock %}

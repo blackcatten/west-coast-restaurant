@@ -1,7 +1,7 @@
 {% load static %}
 
 <!DOCTYPE html>
-<html class="h-100">
+<html lang="en">
 
 <head>
     <title>West Coast Restaurant</title>
@@ -43,9 +43,10 @@
                 <button data-mdb-ripple-init type="button" class="btn btn-link px-3 me-2">
                     <a class="btn btn-success" href="{% url 'account_signup' %}">Sign up for free</a>
                 </button>
+                {% endif %}
             </div>  
         </div>
-        {% endif %}
+        
     </nav>
     <!-- Alert Messages -->
     <div class="container">

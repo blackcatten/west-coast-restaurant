@@ -8,7 +8,18 @@ from django.http import HttpResponse
 from datetime import datetime, date
 from django.db.models import Q
 from django.urls import reverse
+from datetime import date
 
+
+def get_available_tables_for_today():
+
+    
+    today = date.today()
+    booked_tables = Reservations.objects.filter(date=today).count()
+    total_tables = 35
+    available_tables = total_tables - booked_tables
+
+    return available_tables
 
 class ReservationsList(generic.ListView):
     model = Reservations
@@ -66,6 +77,7 @@ class MakeReservations(View):
         current_date = datetime.now().date()
         form = ReservationsForm()
         available_slots = []
+        available_tables = get_available_tables_for_today()
 
         for time_choice in Reservations.TIME_CHOICES:
             time = time_choice[0]
@@ -77,6 +89,7 @@ class MakeReservations(View):
 
         context = {
             'form': form,
+            'available_tables': available_tables,
             'available_slots': available_slots,
         }
         return render(request, 'make_reservation.html', context)
@@ -153,7 +166,17 @@ class UpdateReservation(View):
         form = ReservationsForm(request.POST, instance=reservation)
 
         if form.is_valid():
-            reservation = form.save()
+            new_reservation = form.save(commit=False)
+
+            if new_reservation.date < date.today():
+                messages.error(
+                    request,
+                    'Sorry, but you cannot update the reservation to a past date.'
+                )
+                return redirect('update_reservation', pk=pk)
+
+            new_reservation.save()
+            new_reservation.approved = False
             messages.success(request, 'Your booking has been updated.')
             return redirect('reservations_detail')
         else:
@@ -173,4 +196,5 @@ class DeleteReservation(View):
         reservation.delete()
         messages.success(request, 'Your booking has been deleted.')
         return redirect('reservations_detail')
+
 

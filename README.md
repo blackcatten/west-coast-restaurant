@@ -21,6 +21,12 @@ ALWAYS FRESH SEAFOOD"
 
 ## Features:
 ### Existing Features:
+
+1. Navigation bar.
+
+2. Home Page.
+
+[Homepage](media/Skärmbild_18-4-2024_135430_west-coast-restaurant-901306ae347b.herokuapp.com.jpeg)
 ## Typography:
 ## Design:
 ### Color:

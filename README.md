@@ -26,7 +26,17 @@ ALWAYS FRESH SEAFOOD"
 
 2. Home Page.
 
-[Homepage](media/Skärmbild_18-4-2024_135430_west-coast-restaurant-901306ae347b.herokuapp.com.jpeg)
+![Homepage](media/homepage.jpeg)
+
+3. Make a Reservation Page.
+
+![Make_reservation](media/make_a_reservation.jpeg)
+
+4. Reservations detail Page.
+
+![Reservations_detail](media/reservations_detail.jpeg)
+
+
 ## Typography:
 ## Design:
 ### Color:

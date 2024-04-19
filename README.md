@@ -79,6 +79,31 @@ ALWAYS FRESH SEAFOOD"
 ## Testing:
 ### User Story Testing:
 ## Manual Testing:
+
+1. Validator HTML-pass
+
+- Homepage- pass 
+![validator_homepage](media/validator_index.html_restaurant.jpeg)
+
+- Make a Reservation Page- pass
+
+![validator make a reservation](media/validator_make_reservation.html_restaurant.jpeg)
+
+- Reservations Detail Page- pass
+
+![validator reservations detail](media/validator_reservations_detail.html_restaurant.jpeg)
+
+- Update reservations Page- pass
+
+![validator update reservations](media/validator_update_reservation_restaurant.jpeg)
+
+- Login Page- pass
+
+![validator login](media/validator_login_restaurant.jpeg)
+
+- Logout Page- pass
+
+![validator logout](media/validator_logout_restaurant.jpeg)
 ## Known Bugs:
 ## Deployment:
 ## Deploying the app to Heroku:

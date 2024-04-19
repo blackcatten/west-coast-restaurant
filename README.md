@@ -26,6 +26,20 @@ ALWAYS FRESH SEAFOOD"
 
 1. Navigation bar.
 
+- Navigation bar for desktop.
+
+![nav desktop](media/nav_desktop.png)
+
+![nav desktop login](media/nav_desktop_login.png)
+
+- Navigation bar for ipad.
+
+![nav ipad](media/nav_ipad.png)
+
+- Navigation bar for iphone.
+
+![nav iphone](media/nav_iphone.png)
+
 2. Home Page.
 
 ![Homepage](media/homepage.jpeg)

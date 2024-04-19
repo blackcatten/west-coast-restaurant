@@ -52,6 +52,25 @@ ALWAYS FRESH SEAFOOD"
 
 ![Reservations_detail](media/reservations_detail.jpeg)
 
+5. Login Page.
+
+![login page](media/login.jpeg)
+
+6. Logout Page.
+
+![logout](media/logout.jpeg)
+
+7. Signup Page.
+
+![signup](media/signup.jpeg)
+
+8. Alert Messages.
+
+![alert messages](media/alert_message.png)
+
+![alert messages warning](media/alert_messages_warning.jpeg)
+
+
 
 ## Typography:
 ## Design:

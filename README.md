@@ -76,6 +76,12 @@ ALWAYS FRESH SEAFOOD"
 ## Design:
 ### Color:
 ### Wireframe:
+![wireframe-home](media/wireframe-home-pp4.jpg)
+![wireframe-makereservation](media/wireframe-makereservation-pp4.jpg)
+![wireframe-reservations-detail](media/wireframe-reservations-detail-pp4.jpg)
+![wireframe-signin](media/wireframe-siegnin-pp4.jpg)
+![wireframe-signout](media/wireframe-signout-pp4.jpg)
+![wireframe-signup](media/wireframe-signup-pp4.jpg)
 ## Testing:
 ### User Story Testing:
 ## Manual Testing:

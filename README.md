@@ -105,8 +105,32 @@ ALWAYS FRESH SEAFOOD"
 
 ![validator logout](media/validator_logout_restaurant.jpeg)
 ## Known Bugs:
+
+- Signup Page.
+
+
 ## Deployment:
 ## Deploying the app to Heroku:
+
+Create a Heroku app.
+To create a Heroku application, after log in, on the main page the user should press the button: 'New'. The user should select: 'Create new app'. On the next page, the user should fill a form with the following data: 'App name' and 'Choose a region', and then press button: 'Create app'.
+
+Once the Heroku app is created, the next step is to go to option: 'settings'. In the category 'Config Vars', the user should press 'Reveal Config Vars' button, and then enter the KAY and VALUE for individual properties of:
+
+DATABASE_URL:
+To create DATABASE_URL, 
+
+SECRET_KEY
+To create a SECRET_KEY 
+
+CLOUDINARY_URL
+To create CLOUDINARY_URL,
+
+DISABLE_COLLECTSTATIC
+Value of DISABLE_COLLECTSTATIC should be 1
+
+PORT Value of PORT should be 8000.
+
 ## Technologies Used:
 ### Languages Used:
 ### Frameworks, Libraries and Programs Used:

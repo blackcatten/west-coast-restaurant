@@ -57,7 +57,7 @@ class MakeReservations(View):
 
     template_name = 'make_reservation.html'
     total_tables = 5
-    max_bookings_per_day = 5
+    max_bookings_per_time = 5
 
     def get_available_slots(self, date):
 
@@ -120,7 +120,7 @@ class MakeReservations(View):
                 )
 
                 if (booked_tables_on_reservation_date >=
-                        self.max_bookings_per_day):
+                        self.max_bookings_per_time):
                     messages.error(
                         request,
                         'Sorry, but it is not more tables avaliable.'
@@ -158,7 +158,7 @@ class UpdateReservation(View):
 
     template_name = 'update_reservation.html'
     total_tables = 5
-    max_bookings_per_day = 5
+    max_bookings_per_time = 5
 
     def get(self, request, pk):
         reservation = get_object_or_404(Reservations, pk=pk)
@@ -196,7 +196,7 @@ class UpdateReservation(View):
                 )
 
             if (booked_tables_on_reservation_date >=
-                    self.max_bookings_per_day):
+                    self.max_bookings_per_time):
                 messages.error(
                     request,
                     'Sorry, but it is not more tables avaliable.'

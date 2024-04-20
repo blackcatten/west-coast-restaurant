@@ -30,6 +30,10 @@ class ReservationsDetail(View):
 
     template_name = 'reservations_detail.html'
 
+
+    def get_queryset(self):
+        return Reservations.objects.filter(user=self.request.user)
+
     def get(self, request):
         if request.user.is_authenticated:
             reservations = (
@@ -121,7 +125,7 @@ class MakeReservations(View):
                         request,
                         'Sorry, but it is not more tables avaliable.'
                     )
-                    return redirect('make_reservation')
+                    return redirect('update_reservation')
 
                 available_slots = self.get_available_slots(reservation.date)
 
@@ -152,21 +156,31 @@ class MakeReservations(View):
 
 class UpdateReservation(View):
 
+    template_name = 'update_reservation.html'
+    total_tables = 5
+    max_bookings_per_day = 5
+
     def get(self, request, pk):
         reservation = get_object_or_404(Reservations, pk=pk)
-        form = ReservationsForm(instance=reservation)
-        context = {
-            'form': form,
-            'reservation': reservation,
-        }
-        return render(request, 'update_reservation.html', context)
+
+        if reservation.user == request.user:
+            form = ReservationsForm(instance=reservation)
+            context = {
+                'form': form,
+                'reservation': reservation,
+            }
+            return render(request, 'update_reservation.html', context)
+        else:
+            messages.error(request, 'You are not authorized to update this booking.')
+            return redirect('reservations_detail')
 
     def post(self, request, pk):
         reservation = get_object_or_404(Reservations, pk=pk)
-        form = ReservationsForm(request.POST, instance=reservation)
 
-        if form.is_valid():
-            new_reservation = form.save(commit=False)
+        if reservation.user == request.user:
+            form = ReservationsForm(request.POST, instance=reservation)
+            if form.is_valid():
+                new_reservation = form.save(commit=False)
 
             if new_reservation.date < date.today():
                 messages.error(
@@ -174,6 +188,20 @@ class UpdateReservation(View):
                     'Sorry, but you cannot update the reservation to a past date.'
                 )
                 return redirect('update_reservation', pk=pk)
+
+            booked_tables_on_reservation_date = (
+                    Reservations.objects
+                    .filter(date=reservation.date, time=reservation.time)
+                    .count()
+                )
+
+            if (booked_tables_on_reservation_date >=
+                    self.max_bookings_per_day):
+                messages.error(
+                    request,
+                    'Sorry, but it is not more tables avaliable.'
+                )
+                return redirect('make_reservation')
 
             new_reservation.save()
             new_reservation.approved = False

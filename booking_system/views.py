@@ -12,7 +12,10 @@ from datetime import date
 
 
 def get_available_tables_for_today():
-
+    """
+    This function is there to show how many available 
+    bookings are available to book for today.
+    """
     
     today = date.today()
     booked_tables = Reservations.objects.filter(date=today).count()
@@ -27,6 +30,10 @@ class ReservationsList(generic.ListView):
 
 
 class ReservationsDetail(View):
+    """
+    The ReservationsDetail class includes reservations 
+    that the user has booked into.
+    """
 
     template_name = 'reservations_detail.html'
 
@@ -54,12 +61,20 @@ class ReservationsDetail(View):
 
 
 class MakeReservations(View):
+    """
+    The MakeReservations class exists to make a reservation
+    on dates that are available.
+    """
 
     template_name = 'make_reservation.html'
     total_tables = 5
     max_bookings_per_time = 5
 
     def get_available_slots(self, date):
+        """
+        This function exists to show the user options 
+        to book in the times available in the option: TIME_CHOICES.
+        """
 
         available_slots = []
 
@@ -77,6 +92,11 @@ class MakeReservations(View):
         return available_slots
 
     def get(self, request):
+        """
+        This function exists to show the user which date 
+        they can make a reservation on and that the ReservationsForm
+        should be used.
+        """
 
         current_date = datetime.now().date()
         form = ReservationsForm()
@@ -99,6 +119,11 @@ class MakeReservations(View):
         return render(request, 'make_reservation.html', context)
 
     def post(self, request):
+        """
+        This function exists to inform the user that if the form is filled 
+        correctly, it will lead to reservation_detail, otherwise messages 
+        will appear informing otherwise.
+        """
 
         form = ReservationsForm(request.POST)
 
@@ -155,12 +180,19 @@ class MakeReservations(View):
 
 
 class UpdateReservation(View):
+    """
+    The UpdateReservation class exists to be able to change made reservation.
+    """
 
     template_name = 'update_reservation.html'
     total_tables = 5
     max_bookings_per_time = 5
 
     def get(self, request, pk):
+        """
+        This function exists to show that the ReservationsForm
+        should be used.
+        """
         reservation = get_object_or_404(Reservations, pk=pk)
 
         if reservation.user == request.user:
@@ -175,6 +207,11 @@ class UpdateReservation(View):
             return redirect('reservations_detail')
 
     def post(self, request, pk):
+        """
+        This function exists to inform the user that if the form is filled 
+        correctly, it will lead to reservation_detail, otherwise messages 
+        will appear informing otherwise.
+        """
         reservation = get_object_or_404(Reservations, pk=pk)
 
         if reservation.user == request.user:
@@ -218,6 +255,9 @@ class UpdateReservation(View):
 
 
 class DeleteReservation(View):
+    """
+    This function exists to delete a reservation.
+    """
 
     def post(self, request, pk):
         reservation = get_object_or_404(Reservations, pk=pk)

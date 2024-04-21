@@ -13,16 +13,17 @@ from datetime import date
 
 def get_available_tables_for_today():
     """
-    This function is there to show how many available 
+    This function is there to show how many available
     bookings are available to book for today.
     """
-    
+
     today = date.today()
     booked_tables = Reservations.objects.filter(date=today).count()
     total_tables = 35
     available_tables = total_tables - booked_tables
 
     return available_tables
+
 
 class ReservationsList(generic.ListView):
     model = Reservations
@@ -31,12 +32,11 @@ class ReservationsList(generic.ListView):
 
 class ReservationsDetail(View):
     """
-    The ReservationsDetail class includes reservations 
+    The ReservationsDetail class includes reservations
     that the user has booked into.
     """
 
     template_name = 'reservations_detail.html'
-
 
     def get_queryset(self):
         return Reservations.objects.filter(user=self.request.user)
@@ -51,7 +51,7 @@ class ReservationsDetail(View):
             context = {
                     'reservations': reservations,
             }
-            return render(request,"reservations_detail.html", context)
+            return render(request, "reservations_detail.html", context)
         else:
             messages.error(
                 request,
@@ -72,7 +72,7 @@ class MakeReservations(View):
 
     def get_available_slots(self, date):
         """
-        This function exists to show the user options 
+        This function exists to show the user options
         to book in the times available in the option: TIME_CHOICES.
         """
 
@@ -93,7 +93,7 @@ class MakeReservations(View):
 
     def get(self, request):
         """
-        This function exists to show the user which date 
+        This function exists to show the user which date
         they can make a reservation on and that the ReservationsForm
         should be used.
         """
@@ -105,8 +105,11 @@ class MakeReservations(View):
 
         for time_choice in Reservations.TIME_CHOICES:
             time = time_choice[0]
-            booked_tables = Reservations.objects.filter(date=current_date,
-                                                         time=time).count()
+            booked_tables = (
+                Reservations.objects
+                .filter(date=current_date, time=time)
+                .count()
+            )
             remaining_slots = self.total_tables - booked_tables
             if remaining_slots > 0:
                 available_slots.append((time, remaining_slots))
@@ -120,8 +123,8 @@ class MakeReservations(View):
 
     def post(self, request):
         """
-        This function exists to inform the user that if the form is filled 
-        correctly, it will lead to reservation_detail, otherwise messages 
+        This function exists to inform the user that if the form is filled
+        correctly, it will lead to reservation_detail, otherwise messages
         will appear informing otherwise.
         """
 
@@ -169,7 +172,8 @@ class MakeReservations(View):
                 )
                 return redirect('reservations_detail')
             else:
-                messages.error(request, 'Please, try again and look if something is missing.')
+                messages.error(request, 'Please, try again and look'
+                                        'if something is missing.')
         else:
             messages.error(request, 'Log in first to view your bookings.')
 
@@ -203,13 +207,14 @@ class UpdateReservation(View):
             }
             return render(request, 'update_reservation.html', context)
         else:
-            messages.error(request, 'You are not authorized to update this booking.')
+            messages.error(request, 'You are not authorized to'
+                                    'update this booking.')
             return redirect('reservations_detail')
 
     def post(self, request, pk):
         """
-        This function exists to inform the user that if the form is filled 
-        correctly, it will lead to reservation_detail, otherwise messages 
+        This function exists to inform the user that if the form is filled
+        correctly, it will lead to reservation_detail, otherwise messages
         will appear informing otherwise.
         """
         reservation = get_object_or_404(Reservations, pk=pk)
@@ -222,7 +227,8 @@ class UpdateReservation(View):
             if new_reservation.date < date.today():
                 messages.error(
                     request,
-                    'Sorry, but you cannot update the reservation to a past date.'
+                    'Sorry, but you cannot update the'
+                    'reservation to a past date.'
                 )
                 return redirect('update_reservation', pk=pk)
 
@@ -264,5 +270,3 @@ class DeleteReservation(View):
         reservation.delete()
         messages.success(request, 'Your booking has been deleted.')
         return redirect('reservations_detail')
-
-

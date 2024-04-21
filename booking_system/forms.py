@@ -14,7 +14,7 @@ class ReservationsForm(forms.ModelForm):
         widgets = {
             'date': forms.widgets.DateInput(attrs={'type': 'date'})
         }
-    
+
     def get_available_dates(self):
         booked_dates = Reservations.objects.values_list('date', flat=True)
 

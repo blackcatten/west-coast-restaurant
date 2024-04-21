@@ -84,7 +84,7 @@ ALWAYS FRESH SEAFOOD"
 ![wireframe-signup](media/wireframe-signup-pp4.jpg)
 ## Testing:
 ### User Story Testing:
-## Manual Testing:
+### Manual Testing:
 
 1. Validator HTML-pass
 
@@ -145,6 +145,91 @@ ALWAYS FRESH SEAFOOD"
 - urls.py west_coast- pass
 
 ![validator urls.py west_coast](media/validator_urls_west_coast.jpeg)
+
+#### Testing on desktop:
+- All steps are performed in browsers:
+    - Chrome - Version 111.0.5563.65 (Officiell version) (64 bitar)
+    - Microsoft Edge - Version 111.0.1661.44 (Officiell version) (64 bitar)
+    - Firefox - 111.0 (64-bitars)
+
+1. NAVIGATION BAR:
+
+ - Hover over each link has been made. The effect has been confirmed to be correct.
+ - The Home page link has been pressed and confirmed to take the user to the Home page.
+ - The 'Make a Reservation' page link has been pressed and confirmed to take the user to the correctly page.
+ - The 'Reservations detail' page link has been pressed and confirmed to take the user to the correctly page.
+ - The Sign Up and Log in/ Log out page link has been pressed and confirmed to take the user to the responsive page.
+
+2. FOOTER:
+
+ - It has been verified that the footer is displayed as expected.
+
+3. HOME PAGE:
+
+ - It has been confirmed that the main image on the site is clear and shows up after the page loads.
+ - All pictures on the home page have been reviewed and verified to be the correct size.
+ - It has been confirmed that the title and text are correct and display correctly.
+
+4. MAKE A RESRVATION PAGE:
+
+ - It has been confirmed that if a user submits a form without filling out the required fields, a message is shown to complete them.
+ - It has been confirmed that it shows a message with a valid date if the user enters a name other the date in the date input field.
+ - it has been confirmed that after completing the form correctly and pressing submit, the user will go to the reservations detail page.
+
+ 5. RESERVATIONS DETAIL PAGE:
+
+ - The data that was entered into the form on the Make a Reservation page has been transferred to and displayed in the booking details on the reservations detail page.
+
+ 6. LOGIN PAGE:
+
+ - It has been confirmed that the main image on the site is clear and shows up after the page loads.
+
+ - It has been confirmed that the title and text are correct and display correctly and on correctly place.
+ - It has been confirmed that the online booking page form is laid out as expected.
+ - It has been confirmed that if a user submits a form without filling out the required fields, a message is shown to complete them.
+ - It has been confirmed that it shows a message with a valid username if the user enters a name other the username in the username input field.
+ - It has been confirmed that it shows a message with a valid password if the user enters a name other the password in the password input field.
+ - It has been confirmed that after completing the form correctly and pressing submit, the user will go to the home page.
+
+
+7. SIGN UP PAGE:
+
+ - It has been confirmed that the main image on the site is clear and shows up after the page loads.
+ - It has been confirmed that the title and text are correct and display correctly and on correctly place.
+ - It has been confirmed that the online booking page form is laid out as expected.
+ - It has been confirmed that if a user submits a form without filling out the required fields, a message is shown to complete them.
+ - It has been confirmed that it shows a message with a valid e-mail address if the user enters a name other the e-mail address in the e-mail input field.
+ - Confirmed to display a message with the correct password if the user enters a different password than the first time, or if the password does not match the required arrangement.
+ - It has been confirmed that after completing the form correctly and pressing submit, the user will go to the home page.
+
+8. LOGOUT PAGE:
+
+ - It has been confirmed that the title and text are correct and display correctly and on correctly place.
+ - The button works properly, and after pressing log out button, the user is logged out.
+
+
+9. UPDATE RESERVATION PAGE:
+
+ - It has been confirmed that the main image on the site is clear and shows up after the page loads.
+ - It has been confirmed that the title and text are correct and display correctly and on correctly place.
+ - It has been confirmed that the update reservation page form is laid out as expected.
+ - It has been confirmed that if a user submits a form without filling out the required fields, a message is shown to complete them.
+ - It has been confirmed that it shows a message with a valid date if the user enters a name other the date in the date input field.
+ - It has been confirmed that after completing the form correctly and pressing submit, the user will go to the reservations detail page.
+
+
+10. DELETE RESERVATION PAGE:
+
+ - It has been confirmed that the delete reservation message is correct and display correctly.
+
+### All tests were also performed on:
+- Samsung Galaxy s21
+- Lenovo Tab M8(4th Gen)
+
+
+
+
+
 
 
 

@@ -110,6 +110,13 @@ ALWAYS FRESH SEAFOOD"
 - Logout Page- pass
 
 ![validator logout](media/validator_logout_restaurant.jpeg)
+
+
+1. Validator CSS-pass
+
+![validator css](media/validator-css.jpeg)
+
+
 ## Known Bugs:
 
 - Signup Page.

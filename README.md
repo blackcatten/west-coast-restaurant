@@ -148,9 +148,9 @@ ALWAYS FRESH SEAFOOD"
 
 #### Testing on desktop:
 - All steps are performed in browsers:
-    - Chrome - Version 111.0.5563.65 (Officiell version) (64 bitar)
-    - Microsoft Edge - Version 111.0.1661.44 (Officiell version) (64 bitar)
-    - Firefox - 111.0 (64-bitars)
+    - Chrome - Version 111.0.5563.65 
+    - Microsoft Edge - Version 111.0.1661.44 
+    - Firefox - 111.0
 
 1. NAVIGATION BAR:
 
@@ -243,23 +243,22 @@ ALWAYS FRESH SEAFOOD"
 ## Deploying the app to Heroku:
 
 Create a Heroku app.
-To create a Heroku application, after log in, on the main page the user should press the button: 'New'. The user should select: 'Create new app'. On the next page, the user should fill a form with the following data: 'App name' and 'Choose a region', and then press button: 'Create app'.
+To create a Heroku application, after log in, on the main page should press the button: 'New'. Then you should select: 'Create new app'. On the next page, you should fill a form with the following data: 'App name' and 'Choose a region', and then press button: 'Create app'.
 
 Once the Heroku app is created, the next step is to go to option: 'settings'. In the category 'Config Vars', the user should press 'Reveal Config Vars' button, and then enter the KAY and VALUE for individual properties of:
 
-DATABASE_URL:
-To create DATABASE_URL, 
+- DATABASE_URL:
 
-SECRET_KEY
-To create a SECRET_KEY 
+- SECRET_KEY
 
-CLOUDINARY_URL
-To create CLOUDINARY_URL,
+- CLOUDINARY_URL
 
-DISABLE_COLLECTSTATIC
-Value of DISABLE_COLLECTSTATIC should be 1
+- DISABLE_COLLECTSTATIC (Value of DISABLE_COLLECTSTATIC should be 1)
 
-PORT Value of PORT should be 8000.
+- PORT (Value of PORT should be 8000)
+
+- Linking the repository to the app.
+- Clicking on deploy branch. [My live project](https://west-coast-restaurant-901306ae347b.herokuapp.com/)
 
 ## Technologies Used:
 ### Languages Used:

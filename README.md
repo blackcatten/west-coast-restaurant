@@ -116,6 +116,8 @@ ALWAYS FRESH SEAFOOD"
 
 ![validator css](media/validator_css_restaurant.jpeg)
 
+3. Validator Python-pass
+
 - admin.py booking_system- pass
 
 ![validator admin.py](media/validator_admin.jpeg)
@@ -144,7 +146,7 @@ ALWAYS FRESH SEAFOOD"
 
 ![validator urls.py west_coast](media/validator_urls_west_coast.jpeg)
 
-3. Validator Python-pass
+
 
 
 ## Known Bugs:

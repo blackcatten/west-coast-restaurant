@@ -112,9 +112,39 @@ ALWAYS FRESH SEAFOOD"
 ![validator logout](media/validator_logout_restaurant.jpeg)
 
 
-1. Validator CSS-pass
+2. Validator CSS-pass
 
-![validator css](media/validator-css.jpeg)
+![validator css](media/validator_css_restaurant.jpeg)
+
+- admin.py booking_system- pass
+
+![validator admin.py](media/validator_admin.jpeg)
+
+- forms.py booking_system- pass
+
+![validator forms.py](media/validator_forms.jpeg)
+
+- models.py booking_system- pass
+
+![validator models.py](media/valitator_models.jpeg)
+
+- urls.py booking_system- pass
+
+![validator urls.py](media/validator_urls_booking_system.jpeg)
+
+- views.py booking_system- pass
+
+![validator views.py](media/validator_pep8_restaurant.jpeg)
+
+- settings.py west_coast- pass
+
+![validator settings.py](media/validator_settings_west_coast.jpeg)
+
+- urls.py west_coast- pass
+
+![validator urls.py west_coast](media/validator_urls_west_coast.jpeg)
+
+3. Validator Python-pass
 
 
 ## Known Bugs:

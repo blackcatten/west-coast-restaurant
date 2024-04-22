@@ -344,16 +344,13 @@ On the home page a user can see the text "Welcome to West Coast Restaurant ALWAY
 - Lenovo Tab M8(4th Gen)
 
 
-
-
-
-
-
-
-
 ## Known Bugs:
 
 - Signup Page.
+The signup page showed two errors that could not be found and changed.
+
+![signup html](media/signup_west_coast.jpeg)
+![signup2](media/Skärmbild%202024-04-22%20120829.png)
 
 
 ## Deployment:

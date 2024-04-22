@@ -5,7 +5,8 @@
 
 # Table of content:
 ## User Experience (UX):
-### User Stories :
+### UX principle:
+
 - as a user, it is easy to register on "sign up for free" and book a restaurant visit.
 - as a user, it is easy to book a table after the user has registered and book a table on "make a reservation"
 - as a user, it is easy to check which bookings have been made on "reservations detail".
@@ -20,6 +21,46 @@ ALWAYS FRESH SEAFOOD"
 - as a user, you can see the price of all items on the menus and can easily choose according to wallet if desired
 - as an admin, I can easily confirm bookings via the admin page.
 - as an admin, it is easy to see how many tables are available.
+
+
+### USER STORY
+
+[Project board](https://github.com/users/blackcatten/projects/1/views/1) with my defined [USER STORIES](https://github.com/blackcatten/west-coast-restaurant/issues)  are available here:
+
+- USER STORY: Account registration #1
+  - As a **Site User** I can **register an account** so that **I can book a table**
+
+- USER STORY: Edit and delete booking #2
+  - As a **Site User** I can **edit and delete booking** so that **I can change the time**
+
+- USER STORY: Navigation bar #3
+  - As a **Site User** I can **use a navigation bar** so that **I can switch to other pages**
+
+- USER STORY : Booking system #5
+  - As a **Site User** I can **choose date and time** so that **I can implement a booking**
+
+- USER STORY: Menu #6
+ - As a **Site User** I can **check out the menu** so that **I can check what's available**
+
+- USER STORY: Price #7
+ - As a **Site User** I can **see the price** so that **I can calculate the price**
+
+- USER STORY: Password #8
+ - As a **Site User** I can **create mu own password** so that **I can log in**
+
+- USER STORY: My booking table #9
+  - As a **Site User** I can **go to a separate page** so that **I can see my reserved table**
+
+- USER STORY: My booking table details #10
+ - As a **Site User** I can **go to my booking page** so that **I can see all details of my booking table**
+
+- USER STORY: Contact #11
+ - As a **Site User** I can **see the address and phone number** so that **I can contact the restaurant**
+
+- USER STORY: Home page #12
+ - As a **Site User** I can **go to the home page** so that **I can see information and pictures of the restaurant**
+
+
 
 ## Features:
 ### Existing Features:
@@ -84,6 +125,45 @@ ALWAYS FRESH SEAFOOD"
 ![wireframe-signup](media/wireframe-signup-pp4.jpg)
 ## Testing:
 ### User Story Testing:
+
+[Project board](https://github.com/users/blackcatten/projects/1/views/1) with my defined [USER STORIES](https://github.com/blackcatten/west-coast-restaurant/issues)  are available here:
+
+- USER STORY: Account registration #1
+  - As a **Site User** I can **register an account** so that **I can book a table**
+By clicking the "Sign up for free" button on the right side, a user can register and book a table.
+- USER STORY: Edit and delete booking #2
+  - As a **Site User** I can **edit and delete booking** so that **I can change the time**
+On the 'Reservations detail' page, a user can see made reservations and two buttons: edit and delete. By clicking on the buttons, a user can delete a reservation or update by going to the 'update reservation' page and changing the reservation.
+- USER STORY: Navigation bar #3
+  - As a **Site User** I can **use a navigation bar** so that **I can switch to other pages**
+Through the navigation bar, the user can go to the option "home", "Reservations detail", "Logout" when the user is logged in and "Make a Reservation" and "Login" and "Signup for free" when the user is not logged in.
+- USER STORY: Footer layout #4
+  - As a **Site User** I can **use the footer** so that **I can see the opening hours**
+- USER STORY : Booking system #5
+  - As a **Site User** I can **choose date and time** so that **I can implement a booking**
+By filling in the 'Make a Reservation' form, the user can choose the date and time to make a reservation.
+- USER STORY: Menu #6
+ - As a **Site User** I can **check out the menu** so that **I can check what's available**
+On the website there is a menu available for main dishes, desserts and drinks.
+- USER STORY: Price #7
+ - As a **Site User** I can **see the price** so that **I can calculate the price**
+On the website there is a menu available for main dishes, desserts and drinks with prices.
+- USER STORY: Password #8
+ - As a **Site User** I can **create mu own password** so that **I can log in**
+By clicking the "Signup for free" button, a user comes to a page to fill in the form and create a password.
+- USER STORY: My booking table #9
+  - As a **Site User** I can **go to a separate page** so that **I can see my reserved table**
+By clicking the "Reservations detail" button, a user can see made bookings.
+- USER STORY: My booking table details #10
+ - As a **Site User** I can **go to my booking page** so that **I can see all details of my booking table**
+By clicking the "Reservations detail" button, a user can see made bookings.
+- USER STORY: Contact #11
+ - As a **Site User** I can **see the address and phone number** so that **I can contact the restaurant**
+On the footer, a user can find the address and phone number information to contact the restaurant.
+- USER STORY: Home page #12
+ - As a **Site User** I can **go to the home page** so that **I can see information and pictures of the restaurant**
+On the home page a user can see the text "Welcome to West Coast Restaurant ALWAYS FRESH SEAFOOD" and the "Make a Reservation" button with a background image of shrimp plates.
+
 ### Manual Testing:
 
 1. Validator HTML-pass

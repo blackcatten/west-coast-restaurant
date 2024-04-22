@@ -115,6 +115,10 @@ ALWAYS FRESH SEAFOOD"
 
 ## Typography:
 ## Design:
+### Chart:
+
+![Chart](media/chart.png)
+
 ### Color:
 ### Wireframe:
 ![wireframe-home](media/wireframe-home-pp4.jpg)

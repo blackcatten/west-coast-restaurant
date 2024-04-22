@@ -320,9 +320,9 @@ On the home page a user can see the text "Welcome to West Coast Restaurant ALWAY
 
 
 ## Deployment:
-## Deploying the app to Heroku:
+### Deploying the app to Heroku:
 
-Create a Heroku app.
+#### Create a Heroku app.
 To create a Heroku application, after log in, on the main page should press the button: 'New'. Then you should select: 'Create new app'. On the next page, you should fill a form with the following data: 'App name' and 'Choose a region', and then press button: 'Create app'.
 
 Once the Heroku app is created, the next step is to go to option: 'settings'. In the category 'Config Vars', the user should press 'Reveal Config Vars' button, and then enter the KAY and VALUE for individual properties of:
@@ -337,8 +337,55 @@ Once the Heroku app is created, the next step is to go to option: 'settings'. In
 
 - PORT (Value of PORT should be 8000)
 
-- Linking the repository to the app.
-- Clicking on deploy branch. [My live project](https://west-coast-restaurant-901306ae347b.herokuapp.com/)
+
+
+#### Creating a repository on GitHub
+Utilizing the GitHub Full Template, my project was initiated. Clicking the green dropdown located at the top right corner of the page, the option 'Use this template' was selected. Following that, the 'Create a new repository' button was chosen. Subsequently, you'll be redirected to another page where, under the 'Owner*' tab, your username should be selected, and under the 'Repository name*' tab, a name for your repository should be provided. Beneath that, within the 'Description (optional)' section, you have the opportunity to furnish your repository with a brief description. Below, there's an option to designate your repository as either private or public. Finally, once all necessary details are filled, the 'Create repository' button should be pressed.
+
+On the GitPod Page, situated at the top right corner, there's a button labeled 'New Workspace'. Upon clicking that, a new workspace can be added. In the 'Select a repository' tab, you can paste the URL link to the previously created repository. Upon completion, hit the 'Continue' button, and the workspace will commence building. It may take a while for the workspace to fully establish. Next, you'll need to install Django and its supporting libraries:
+
+Install Django and gunicorn via the following command in the terminal: 'pip3 install django gunicorn'
+Install the necessary supporting libraries using the command: 'pip3 install dj_database_url psycopg2'
+Incorporate Cloudinary Libraries with the command: 'pip3 install dj3-cloudinary-storage'
+Generate a requirements file via the command: 'pip3 freeze --local > requirements.txt'
+Create the project using the command: 'django-admin startproject PROJ_NAME .'
+Establish an app using the command: 'python3 manage.py startapp APP_NAME'
+Subsequently, create a new env.py file at the top level of the directory and configure the database:
+
+Begin by importing the os library at the beginning of the env.py file with 'import os'.
+Set the environment variables as follows:
+os.environ["DATABASE_URL"] = "Paste the same value as pasted in Heroku Config Vars"
+os.environ["SECRET_KEY"] = "Paste the same value as pasted in Heroku Config Vars"
+os.environ["CLOUDINARY_URL"] = "Paste the same value as pasted in Heroku Config Vars"
+Lastly, create a Procfile at the top level directory and input 'web: gunicorn PROJ_NAME.wsgi'.
+
+Linking the Heroku application with the GitHub repository
+Navigate to the Heroku page, locate and select your previously created application panel, then click on 'deploy'. Within the 'Deployment method' section, opt for 'Connect to GitHub'. Beneath, you'll encounter the field labeled 'Search for a repository to connect to'. Enter your GitHub username and repository name, then hit the 'Search' button. Below, you'll find your GitHub repository name along with a 'Connect' button. At this juncture, you have two choices: either opt for 'Automatic deploys' or 'Manual deploy'.
+
+I've chosen the 'Manual deploy' option. Adjacent to the 'Choose a branch to deploy' field, select 'main' and proceed by clicking 'Deploy Branch'. Allow some time for the main branch to build up. Upon successful completion, you'll receive a message stating 'Your app was successfully deployed' alongside a 'View' button. Click on 'View' to observe the live project. - [My live project](https://west-coast-restaurant-901306ae347b.herokuapp.com/)
+
+The final steps required for deploying the application:
+Prepare the application for deployment on Heroku once all code changes have been finalized and tested on localhost.
+
+Set the DEBUG flag to False in settings.py.
+Configure 'X_FRAME_OPTIONS' in settings.py to 'SAMEORIGIN'.
+Update the requirements.txt file using the command: 'pip3 freeze --local > requirements.txt'.
+Remove the Config Vars 'DISABLE_COLLECTSTATIC' from Heroku.
+Navigate to the Deploy tab on the Heroku dashboard for the application and initiate the deployment process by clicking on deploy branch.
+
+#### Comprehensive guide on cloning the repository:
+Visit the following page: [My live project](https://west-coast-restaurant-901306ae347b.herokuapp.com/)
+Click on the 'Code' button and copy the HTTPS link provided.
+Once you've launched the GitBush terminal, navigate to the desired directory where you intend to clone the repository.
+To initiate the cloning process, type "git clone" followed by the copied URL into the command line and hit Enter.
+Execute the command: pip install -r requirements.txt to install the necessary packages for the application.
+In the settings.py file, set DEBUG=True to facilitate development and local execution of the application.
+To push any local changes back to the repository, employ the following commands:
+git add . (or filenames)
+git commit -m "Briefly describe the changes made"
+git push
+Note: Any alterations pushed to the master branch will be reflected in the live project once the application is re-deployed from Heroku.
+
 
 ## Technologies Used:
 ### Languages Used:

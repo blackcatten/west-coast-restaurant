@@ -4,6 +4,38 @@
 ![responsive](media/responsive.png)
 
 # Table of content:
+[User Experience (UX)](#user-experience-ux)
+[UX principle](#ux-principle)
+[USER STORY](#user-story)
+[Features](#features)
+[Existing features](#existing-features)
+[Design](#design)
+[Chart](#chart)
+[Color](#color)
+[Wireframe](#wireframe)
+[Testing](#testing)
+[User Story Testing](#user-story-testing)
+[Manual testing](#manual-testing)
+[Testing on desktop](#testing-on-desktop)
+[All tests were also performed on](#all-tests-were-also-performed-on)
+[Known bugs](#known-bugs)
+[Deployment](#deployment)
+[Create a Heroku app](#create-a-heroku-app)
+[Creating a repository on github](#creating-a-repository-on-github)
+[Comprehensive guide on cloning the respository](#comprehensive-guide-on-cloning-the-repository)
+[Technologies Used](#technologies-used)
+[Credits](#credits)
+[Content](#content)
+[Code](#code)
+[Media](#media)
+[Acknowledgements](#acknowledgements)
+
+
+
+
+
+
+
 ## User Experience (UX):
 ### UX principle:
 
@@ -112,8 +144,6 @@ ALWAYS FRESH SEAFOOD"
 ![alert messages warning](media/alert_messages_warning.jpeg)
 
 
-
-## Typography:
 ## Design:
 ### Chart:
 
@@ -327,7 +357,7 @@ On the home page a user can see the text "Welcome to West Coast Restaurant ALWAY
 
 
 ## Deployment:
-### Deploying the app to Heroku:
+
 
 #### Create a Heroku app.
 To create a Heroku application, after log in, on the main page should press the button: 'New'. Then you should select: 'Create new app'. On the next page, you should fill a form with the following data: 'App name' and 'Choose a region', and then press button: 'Create app'.
@@ -414,9 +444,23 @@ SQLite
 Django Allauth
 Django Crispy Forms 
 
-### Frameworks, Libraries and Programs Used:
 ## Credits: 
 ### Content:
+
+- [Menu content](https://fiskekrogen.se/meny/)
 ### Code:
+
+- [MDB](https://mdbootstrap.com/docs/standard/extended/login/)- was used to login, logout and signup layout.
+- [Django models](https://docs.djangoproject.com/en/4.1/topics/forms/modelforms/) and [Django views](https://docs.djangoproject.com/en/4.2/topics/class-based-views/) and [Django Forms](https://docs.djangoproject.com/en/4.2/ref/forms/) was used to create models.py, views.py and forms.py
+- [Django Tutorial](https://www.geeksforgeeks.org/django-tutorial/) was used to learn django. 
 ### Media:
+
+- [Background image- Homepage](https://images.pexels.com/photos/566344/pexels-photo-566344.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1)
+- [Menu- main dishes](https://images.pexels.com/photos/3957499/pexels-photo-3957499.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1)
+- [Munu- desserts](https://images.pexels.com/photos/3026804/pexels-photo-3026804.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1)
+- [Menu- drinks](https://images.pexels.com/photos/1123260/pexels-photo-1123260.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1)
+- [Login, Logout and Signup background image](https://images.pexels.com/photos/355808/pexels-photo-355808.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1)
+
+
 ## Acknowledgements:
+- Special thanks to my mentor who helped me to find bugs.

@@ -154,12 +154,25 @@ ALWAYS FRESH SEAFOOD"
 ![color](media/color.png)
 
 ### Wireframe:
+- Home Page Wireframe:
 ![wireframe-home](media/wireframe-home-pp4.jpg)
+
+- Make a Reservation Wireframe:
 ![wireframe-makereservation](media/wireframe-makereservation-pp4.jpg)
+
+- Reservations detail Wireframe:
 ![wireframe-reservations-detail](media/wireframe-reservations-detail-pp4.jpg)
+
+- Signin Wireframe:
 ![wireframe-signin](media/wireframe-siegnin-pp4.jpg)
+
+- Signout Wireframe:
 ![wireframe-signout](media/wireframe-signout-pp4.jpg)
+
+- Signup Wireframe:
 ![wireframe-signup](media/wireframe-signup-pp4.jpg)
+
+
 ## Testing:
 ### User Story Testing:
 

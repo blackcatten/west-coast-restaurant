@@ -388,7 +388,25 @@ Note: Any alterations pushed to the master branch will be reflected in the live 
 
 
 ## Technologies Used:
-### Languages Used:
+HTML
+CSS
+PYTHON
+JQUERY
+Font Awesome 
+Google Fonts 
+Git 
+GitHub 
+Django 
+Bootstrap 
+Heroku 
+Lucid Chart
+Pep8 
+Cloudinary 
+PostgreSQL 
+SQLite 
+Django Allauth
+Django Crispy Forms 
+
 ### Frameworks, Libraries and Programs Used:
 ## Credits: 
 ### Content:

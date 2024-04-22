@@ -120,6 +120,9 @@ ALWAYS FRESH SEAFOOD"
 ![Chart](media/chart.png)
 
 ### Color:
+
+![color](media/color.png)
+
 ### Wireframe:
 ![wireframe-home](media/wireframe-home-pp4.jpg)
 ![wireframe-makereservation](media/wireframe-makereservation-pp4.jpg)
